@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/drops/-",
+    "value": {
+      "type": "item",
+      "code": "temporalhack:brokenrobot-bellhead",
+      "quantity": {
+        "avg": 1
+      }
+    },
+    "file": "game:entities/land/bell.json"
+  }
+]

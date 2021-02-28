@@ -1,0 +1,209 @@
+[
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_Q_,QTQ,_Q_",
+  	ingredients: {
+  		"Q": { type: "item", code: "game:ore-quartz" },
+      "T": { type: "item", code: "game:gear-temporal" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:memorygear", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_Q_,QTQ,_Q_",
+  	ingredients: {
+  		"Q": { type: "block", code: "game:chest-*" },
+      "T": { type: "item", code: "game:gear-temporal" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "block", code: "temporalhack:translocatorchest-east", attributes: { type: "normal-generic" } , quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_Q_,QTQ,_Q_",
+  	ingredients: {
+      "Q": { type: "block", code: "game:barrel" },
+      "T": { type: "item", code: "game:gear-temporal" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "block", code: "temporalhack:translocatorbarrel", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_C_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:clearquartz" },
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "block", code: "game:chest-*" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-collector", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_C_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*"},
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:hoe-*" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-harvester", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_C_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*"},
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:shovel-*" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-planter", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_C_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*"},
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:knife-*" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-apiary", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_C_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*"},
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "block", code: "game:bowl-burned" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-milk", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "CCC,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*"},
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:saw-*" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-harvester-sawblade", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "C_H,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*"},
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:woodenclub-*" },
+      "H": { type: "block", code: "game:hopper" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-refuel", quantity: 1  }
+  },
+
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_C_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*", quantity: 1 },
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:hunterbackpack" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-transporter", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "CHC,RBR,CGC",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*", quantity: 2 },
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:metallamellae-*" },
+      "H": { type: "block", code: "game:hopper" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-guard", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_H_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*", quantity: 2 },
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "H": { type: "item", code: "game:plumbandsquare" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-builder", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_C_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:gem-*", quantity: 2 },
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:pickaxe-*" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-miner", quantity: 1  }
+  },
+  {
+    requiresTrait: "rengineer",
+  	ingredientPattern: "_C_,RBR,_G_",
+  	ingredients: {
+  		"G": { type: "item", code: "game:clearquartz" },
+      "B": { type: "item", code: "temporalhack:brokenrobot-locustcorpse" },
+      "R": { type: "item", code: "game:gear-rusty", quantity: 1},
+      "C": { type: "item", code: "game:clay-*" },
+
+  	},
+  	width: 3,
+  	height: 3,
+  	output: { type: "item", code: "temporalhack:deploybot-reprog-locust-crafter", quantity: 1  }
+  },
+]

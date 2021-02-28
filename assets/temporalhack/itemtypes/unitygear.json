@@ -1,0 +1,42 @@
+{
+	code: "unitygear",
+	attributes: {
+			displaycaseable: true,
+			shelvable: true,
+			onDisplayTransform: {
+				translation: { x: 0.1, y: 0, z: 0 },
+				rotation: { x: 0, y: 0, z: 2 },
+				origin: { x: 0.25, y: 0.5, z: 0.25 }
+			}
+		},
+	shape: { base: "game:item/gear-temporal" },
+  textures: {
+    "temporal" : { base: "game:block/metal/ingot/blackbronze" },
+  },
+	creativeinventory: { "general": ["*"], "items": ["*"] },
+	maxstacksize: 8,
+	materialDensity: 4000,
+	guiTransform: {
+			translation: { x: 3, y: 1, z: 0 },
+			rotation: { x: 145, y: -12, z: 0 },
+			origin: { x: 0.5, y: 0.0625, z: 0.5 },
+			scale: 2.5
+		},
+	fpHandTransform: {
+		translation: { x: 0, y: 0.2, z: 0 },
+		rotation: { x: 15, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 1.8
+	},
+	tpHandTransform: {
+		translation: { x: -1.1, y: 0, z: -1.2 },
+		origin: { x: 0.5, y: 0.0625, z: 0.5 },
+		scale: 0.45
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.39, y: 0, z: 0.47 },
+		scale: 2.5
+	}
+}

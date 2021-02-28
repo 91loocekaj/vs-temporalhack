@@ -1,0 +1,218 @@
+[
+  {
+    "op": "add",
+    "path": "/client/behaviors/-",
+    "value": {
+      "code": "harvestable"
+    },
+    "file": "game:entities/land/locust.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/6",
+    "value": {
+      "code": "emotionstates",
+      "states": [
+        {
+          "code": "fleeondamage",
+          "duration": 10,
+          "chance": 0.2,
+          "slot": 0,
+          "priority": 5,
+          "accumType": "max"
+        },
+        {
+          "code": "aggressiveondamage",
+          "duration": 30,
+          "chance": 1,
+          "slot": 2,
+          "priority": 2,
+          "accumType": "noaccum"
+        }
+      ]
+    },
+    "file": "game:entities/land/locust.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/-",
+    "value": {
+      "code": "harvestable",
+      "dropsByType": {
+        "*-bronze": [
+          {
+            "type": "item",
+            "code": "temporalhack:brokenrobot-locustcorpse",
+            "quantity": {
+              "avg": 0.05
+            },
+            "dropModbyStat": "mechanicalMind"
+          },
+          {
+            "type": "item",
+            "code": "game:gear-rusty",
+            "quantity": {
+              "avg": 0.1
+            },
+            "dropModbyStat": "rustyGearDropRate"
+          }
+        ],
+        "*-corrupt": [
+          {
+            "type": "item",
+            "code": "temporalhack:brokenrobot-locustcorpse",
+            "quantity": {
+              "avg": 0.1
+            },
+            "dropModbyStat": "mechanicalMind"
+          },
+          {
+            "type": "item",
+            "code": "game:gear-rusty",
+            "quantity": {
+              "avg": 0.2
+            },
+            "dropModbyStat": "rustyGearDropRate"
+          },
+          {
+            "type": "item",
+            "code": "game:gem-diamond-rough",
+            "quantity": {
+              "avg": 0.05
+            }
+          }
+        ],
+        "*-sawblade": [
+          {
+            "type": "item",
+            "code": "temporalhack:brokenrobot-sawbladecorpse",
+            "quantity": {
+              "avg": 1
+            }
+          },
+          {
+            "type": "item",
+            "code": "game:gem-diamond-rough",
+            "quantity": {
+              "avg": 1,
+              "var": 0.5
+            }
+          }
+        ]
+      }
+    },
+    "file": "game:entities/land/locust.json"
+  },
+
+  {
+    "op": "add",
+    "path": "/server/behaviors/7/aitasks/-",
+    "value":
+    {
+      "code": "meleeattack",
+      "entityCodes": [
+        "reprog-*"
+      ],
+      "priority": 3,
+      "damageByType": {
+        "*-bronze": 1.5,
+        "*-corrupt": 4,
+        "*-corrupt-sawblade": 16
+      },
+      "damageTierByType": {
+        "*-bronze": 2,
+        "*-corrupt": 3,
+        "*-corrupt-sawblade": 3
+      },
+      "mincooldown": 1500,
+      "maxcooldown": 1500,
+      "damageTypeByType": {
+        "*-bronze": "PiercingAttack",
+        "*-corrupt": "PiercingAttack",
+        "*-corrupt-sawblade": "SlashingAttack"
+      },
+      "damagePlayerAtMs": 600,
+      "attackDurationMs": 1000,
+      "animation": "attack",
+      "animationSpeed": 1.2,
+      "soundByType": {
+        "*-corrupt-sawblade": "creature/locust/saw"
+      },
+      "soundStartMs": 1000,
+      "whenInEmotionState": "aggressiveondamage"
+    },
+    "file": "game:entities/land/locust.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/7/aitasks/-",
+    "value":
+        {
+          "code": "seekentity",
+          "entityCodes": [
+            "reprog-*"
+          ],
+          "priority": 1.5,
+          "mincooldown": 500,
+          "maxcooldown": 1000,
+          "movespeed": 0.025,
+          "seekingRange": 15,
+          "maxFollowTime": 20,
+          "animationSpeed": 4.5,
+          "alarmHerd": true,
+          "leapAtTarget": true,
+          "leapAnimation": "jump",
+          "animation": "rundrill",
+          "whenInEmotionState": "aggressiveondamage"
+        },
+
+    "file": "game:entities/land/locust.json"
+  },
+
+  {
+    "op": "add",
+    "path": "/server/spawnconditionsByType/*-bronze",
+    "value": {
+      "runtime": {
+        "group": "hostile",
+        "maxQuantity": 9,
+        "maxLightLevel": 7,
+        "chance": 0.1,
+        "lightLevelType": "MaxTimeOfDayLight",
+        "groupSize": {
+          "dist": "invexp",
+          "avg": 3,
+          "var": 2
+        },
+        "insideBlockCodes": [
+          "air"
+        ],
+        "maxY": 0.89
+      }
+    },
+    "file": "game:entities/land/locust.json"
+  },
+  {
+    "op": "add",
+    "path": "/server/spawnconditionsByType/*-corrupt",
+    "value": {
+      "runtime": {
+        "group": "hostile",
+        "maxQuantity": 8,
+        "maxLightLevel": 7,
+        "chance": 0.1,
+        "lightLevelType": "MaxTimeOfDayLight",
+        "groupSize": {
+          "dist": "invexp",
+          "avg": 3,
+          "var": 2
+        },
+        "insideBlockCodes": [
+          "air"
+        ],
+        "maxY": 0.6
+      }
+    },
+    "file": "game:entities/land/locust.json"
+  }
+]

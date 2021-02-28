@@ -1,0 +1,24 @@
+[
+  {
+    "op": "add",
+    "path": "/-",
+    "value": {
+      "code": "technomancer",
+      "type": "positive",
+      "attributes": {
+        "mechanicalMind": 3
+      }
+    },
+    "file": "game:config/traits.json"
+  },
+  {
+    "op": "add",
+    "path": "/-",
+    "value": {
+      "code": "rengineer",
+      "type": "positive",
+      "attributes": {}
+    },
+    "file": "game:config/traits.json"
+  }
+]

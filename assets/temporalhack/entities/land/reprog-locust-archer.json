@@ -1,0 +1,131 @@
+{
+	code: "reprog-locust-archer",
+	class: "EntityLocust",
+	canClimb: true,
+	climbTouchDistance: 0.1,
+	fallDamage: false,
+	hitboxSize: { x: 0.65, y: 0.6 },
+	deadHitboxSize: { x: 0.65, y: 0.5 },
+	eyeHeight: 0.3,
+	attributes: {
+		spawnDamageParticles: true,
+		isMechanical: true,
+    blockDiet: ["Honey", "Berry"]
+	},
+	drops: [
+		{
+			type: "item",
+			code: "temporalhack:deploybot-reprog-locust-archer",
+			attributes: {
+				workHealth: 59
+			},
+			quantity: { avg: 1 }
+		},
+	],
+	client: {
+		renderer: "Shape",
+		shape: { base: "temporalhack:entity/land/reprog-locust-archer" },
+		glowLevel: 16,
+		behaviors: [
+			{ code: "repulseagents" },
+      { code: "program", nobarrel: true},
+			{ code: "controlledphysics", stepHeight: 2 },
+			{ code: "floatupwhenstuck", onlyWhenDead: false },
+			{ code: "interpolateposition" }
+		],
+		animations: [
+			{
+				code: "hurt",
+				animation: "hurt",
+				animationSpeed: 2.2,
+				weight: 5,
+				blendMode: "AddAverage"
+			},
+			{
+				code: "die",
+				animation: "die",
+				animationSpeed: 1.25,
+				weight: 10,
+				blendMode: "Average",
+				triggeredBy: { onControls: ["dead"] }
+			},
+			{
+				code: "idle",
+				animation: "idle",
+				blendMode: "Average",
+				triggeredBy: { defaultAnim: true },
+			}
+		]
+	},
+	server: {
+		behaviors: [
+			{ code: "repulseagents" },
+			{ code: "controlledphysics", stepHeight: 2 },
+			{ code: "health", maxhealth: 60, currenthealth: 60},
+      { code: "program", nobarrel: true},
+			{ code: "floatupwhenstuck", onlyWhenDead: false },
+			{
+				code: "taskai",
+				aitasks: [
+					{
+						code: "prograngedattack",
+						entityCodes: ["wolf-*", "drifter-*", "bell", "locust-*", "shintorickae", "tickling", "wild-goblin", "wild-goblin_spear", "bandit-*"],
+						priority: 3,
+						mincooldown: 1500,
+						maxcooldown: 1500,
+						damagePlayerAtMs: 600,
+						minDist: 0,
+						minVerDist: 0,
+						shotVelocity: 0.75,
+						animation: "attack",
+						animationSpeed: 1.2,
+					},
+					{
+						code: "stayclosetoowner",
+						priority: 2.7,
+						movespeed: 0.06,
+						maxDistance: 10,
+						searchRange: 30,
+						animation: "run",
+						animationSpeed: 3
+					},
+					{
+						code: "fromchest",
+						movespeed: 0.010,
+						priority: 2.3,
+						animationSpeed: 1.4,
+						onlyOnGuard: true,
+						animation: "run",
+					},
+					{
+						code: "getitem",
+						movespeed: 0.010,
+						priority: 2.2,
+						animationSpeed: 1.4,
+						animation: "run",
+						items : ["arrow-*"],
+					},
+					{
+						code: "topoint",
+						movespeed: 0.010,
+						priority: 2.1,
+						animationSpeed: 1.4,
+						animation: "run",
+					},
+					{
+						code: "lookaround",
+						priority: 0.5,
+						animation: "sleep",
+						animationSpeed: 1.25
+					}
+				]
+			}
+		],
+	},
+	sounds: {
+		hurt: "game:creature/locust/hurt",
+		death: "game:creature/locust/death",
+		idle: "game:creature/locust/idle"
+	},
+	idleSoundChance: 0.05
+}

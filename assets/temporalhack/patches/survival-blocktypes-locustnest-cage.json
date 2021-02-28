@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/drops/0",
+    "value": {
+      "type": "item",
+      "code": "temporalhack:unitygear",
+      "quantity": {
+        "avg": 1
+      }
+    },
+    "file": "game:blocktypes/locustnest/cage.json"
+  }
+]

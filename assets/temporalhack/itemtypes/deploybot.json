@@ -1,0 +1,89 @@
+{
+	code: "deploybot",
+  class: "ItemDeployBot",
+	maxstacksize: 64,
+	variantgroups: [
+		{ code: "type", states: ["reprog-locust-harvester", "reprog-locust-collector", "reprog-locust-transporter",
+			"reprog-locust-planter", "reprog-locust-apiary", "reprog-locust-milk", "reprog-locust-harvester-sawblade", "reprog-locust-refuel",
+			"reprog-locust-crafter", "reprog-locust-miner", "reprog-locust-builder", "reprog-locust-guard", "reprog-locust-archer"] },
+	],
+	shapeByType: {
+    "*-sawblade": { base: "temporalhack:entity/land/reprog-locust-sawblade" },
+		"*-miner": { base: "temporalhack:entity/land/reprog-locust-miner" },
+		"*-builder": { base: "temporalhack:entity/land/reprog-locust-builder" },
+		"*-guard": { base: "temporalhack:entity/land/reprog-locust-guard" },
+		"*-archer": { base: "temporalhack:entity/land/reprog-locust-archer" },
+		"*": { base: "temporalhack:entity/land/reprog-locust" },
+	},
+	attributes: {
+		handbook: {
+			excludeByType: {
+				"*-archer": true
+			}
+		}
+	},
+	creativeinventory: { "general": ["*"], "items": ["*"], "creatures": ["*"] },
+	materialDensity: 600,
+  guiTransformByType: {
+		"*-sawblade": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: -18, y: -130, z: -180 },
+			origin: { x: 0.6, y: 0.4, z: 0.5 },
+			scale: 1.45
+		},
+		"*-miner": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: -18, y: -130, z: -180 },
+			origin: { x: 0.6, y: 0.4, z: 0.5 },
+			scale: 1.45
+		},
+		"*-builder": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: -18, y: -130, z: -180 },
+			origin: { x: 0.6, y: 0.4, z: 0.5 },
+			scale: 1.45
+		},
+		"*-guard": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: -18, y: -130, z: -180 },
+			origin: { x: 0.6, y: 0.4, z: 0.5 },
+			scale: 1.45
+		},
+		"*-archer": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: -18, y: -130, z: -180 },
+			origin: { x: 0.6, y: 0.4, z: 0.5 },
+			scale: 1.45
+		},
+    "*": {
+			translation: { x: 2, y: 0, z: 0 },
+			rotation: { x: -20, y: -127, z: -180 },
+			origin: { x: 0.5, y: 0.2, z: 0.5 },
+			scale: 1.88
+		},
+  },
+  groundTransformByType: {
+		"*-locust-*": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: 0, y: 0, z: 0 },
+			origin: { x: 0.5, y: 0, z: 0.5299 },
+			scale: 1.95
+		},
+  },
+  tpHandTransformByType: {
+    "*-locust-*": {
+			translation: { x: -1.1, y: -0.3, z: -0.7 },
+			rotation: { x: -159, y: -21, z: -89 },
+			origin: { x: 0.5, y: 0.2, z: 0.5 },
+			scale: 0.53
+		},
+  },
+  fpHandTransformByType: {
+    "*-locust-*": {
+			translation: { x: 0.3, y: 0.09, z: 0 },
+			rotation: { x: -149, y: -115, z: -180 },
+			origin: { x: 0.5, y: 0.1, z: 0.5 },
+			scale: 1.65
+		},
+  },
+}

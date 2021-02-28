@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/3/traits/-",
+    "value": "technomancer",
+    "file": "game:config/characterclasses.json"
+  },
+  {
+    "op": "add",
+    "path": "/3/traits/-",
+    "value": "rengineer",
+    "file": "game:config/characterclasses.json"
+  }
+]

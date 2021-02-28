@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8B96CD3-7D04-49CE-B14A-DED529A40FBB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>temporalhack</RootNamespace>
+    <AssemblyName>temporalhack</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(ProjectDir)\bin</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Debug\temporalhack\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(ProjectDir)\bin</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Release\temporalhack\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(AppData)\Vintagestory\VintagestoryAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSEssentials.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSCreativeMod">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(AppData)\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modinfo.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\AI\AiTaskAnyFromChest.cs" />
+    <Compile Include="src\AI\AiTaskGetItem.cs" />
+    <Compile Include="src\AI\AiTaskGetTool.cs" />
+    <Compile Include="src\AI\AiTaskPathBuilder.cs" />
+    <Compile Include="src\AI\AiTaskProgRangedAttack.cs" />
+    <Compile Include="src\AI\AiTaskStayCloseToOwner.cs" />
+    <Compile Include="src\AI\AiTaskQuarry.cs" />
+    <Compile Include="src\AI\AiTaskProgMeleeAttack.cs" />
+    <Compile Include="src\AI\AiTaskProgSeekEntity.cs" />
+    <Compile Include="src\AI\AiTaskGetFuel.cs" />
+    <Compile Include="src\AI\AiTaskGetSeed.cs" />
+    <Compile Include="src\AI\AiTaskRepair.cs" />
+    <Compile Include="src\AI\AiTaskRefuel.cs" />
+    <Compile Include="src\AI\AiTaskMilk.cs" />
+    <Compile Include="src\AI\AiTaskSeekItemAny.cs" />
+    <Compile Include="src\AI\AiTaskSqueezeHoney.cs" />
+    <Compile Include="src\AI\AiTaskForm.cs" />
+    <Compile Include="src\AI\AiTaskToPoint.cs" />
+    <Compile Include="src\AI\AiTaskToBarrel.cs" />
+    <Compile Include="src\AI\AiTaskFromChest.cs" />
+    <Compile Include="src\AI\AiTaskHarvest.cs" />
+    <Compile Include="src\AI\AiTaskPlant.cs" />
+    <Compile Include="src\AI\AiTaskSeekItem.cs" />
+    <Compile Include="src\AI\AiTaskToAltChest.cs" />
+    <Compile Include="src\AI\AiTaskToChest.cs" />
+    <Compile Include="src\Behavior\EntityBehaviorProgram.cs" />
+    <Compile Include="src\Entity\EntityReprogLocust.cs" />
+    <Compile Include="src\Inventory\ItemSlotWork.cs" />
+    <Compile Include="src\Item\ItemDeployBot.cs" />
+    <Compile Include="src\Item\ItemProgCard.cs" />
+    <Compile Include="src\TemporalHack.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+copy "$(TargetPath)" "$(ProjectDir)" 
+copy "$(TargetDir)\$(TargetName).pdb" "$(ProjectDir)" 
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

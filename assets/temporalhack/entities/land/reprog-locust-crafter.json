@@ -1,0 +1,108 @@
+{
+	code: "reprog-locust-crafter",
+	class: "EntityReprogLocust",
+	canClimb: true,
+	climbTouchDistance: 0.1,
+	fallDamage: false,
+	hitboxSize: { x: 0.65, y: 0.6 },
+	deadHitboxSize: { x: 0.65, y: 0.5 },
+	eyeHeight: 0.3,
+	attributes: {
+		spawnDamageParticles: true,
+		isMechanical: true,
+    blockDiet: ["Honey", "Berry"]
+	},
+	drops: [
+		{
+			type: "item",
+			code: "temporalhack:deploybot-reprog-locust-crafter",
+			attributes: {
+				workHealth: 19
+			},
+			quantity: { avg: 1 }
+		},
+	],
+	client: {
+		renderer: "Shape",
+		shape: { base: "temporalhack:entity/land/reprog-locust" },
+		glowLevel: 16,
+		behaviors: [
+			{ code: "repulseagents" },
+      { code: "program", nobarrel: true },
+			{ code: "controlledphysics", stepHeight: 2 },
+			{ code: "floatupwhenstuck", onlyWhenDead: false },
+			{ code: "interpolateposition" }
+		],
+		animations: [
+			{
+				code: "hurt",
+				animation: "hurt",
+				animationSpeed: 2.2,
+				weight: 5,
+				blendMode: "AddAverage"
+			},
+			{
+				code: "die",
+				animation: "die",
+				animationSpeed: 1.25,
+				weight: 10,
+				blendMode: "Average",
+				triggeredBy: { onControls: ["dead"] }
+			},
+			{
+				code: "idle",
+				animation: "idle",
+				blendMode: "Average",
+				triggeredBy: { defaultAnim: true },
+			}
+		]
+	},
+	server: {
+		behaviors: [
+			{ code: "repulseagents" },
+			{ code: "controlledphysics", stepHeight: 2 },
+			{ code: "health", maxhealth: 20, currenthealth: 20},
+      { code: "program", nobarrel: true },
+			{ code: "floatupwhenstuck", onlyWhenDead: false },
+			{
+				code: "taskai",
+				aitasks: [
+					{
+						code: "getitem",
+						movespeed: 0.010,
+						priority: 3,
+						animationSpeed: 1.4,
+						animation: "run",
+						items : ["clay-*"],
+					},
+					{
+						code: "fromchest",
+						movespeed: 0.010,
+						priority: 3.1,
+						animationSpeed: 1.4,
+						animation: "run",
+					},
+					{
+						code: "form",
+						movespeed: 0.010,
+						priority: 2,
+						animationSpeed: 1.4,
+						animation: "run",
+					},
+					{
+						code: "lookaround",
+						priority: 0.5,
+						animation: "sleep",
+						animationSpeed: 1.25
+					}
+				]
+			}
+		],
+	},
+	sounds: {
+		hurt: "game:creature/locust/hurt",
+		death: "game:creature/locust/death",
+		idle: "game:creature/locust/idle"
+	},
+	idleSoundChance: 0.05
+}
