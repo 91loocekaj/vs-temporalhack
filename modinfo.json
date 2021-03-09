@@ -4,7 +4,7 @@
   "name": "Temporal Hacker",
   "author": "jakecool19",
   "description": "Adds ability to harvest and reprogram locust to do things for you",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "dependency": {
     "game": ""
   }

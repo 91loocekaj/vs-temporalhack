@@ -70,4 +70,85 @@
   "game:traitdesc-rengineer": "Repair and reprogram locust cheaper.",
 
   "translocatorchestcontents": "Translocator Chest Contents",
+
+  "temporalhackerguide-title" : "Hacking 101",
+
+  "temporalhackerguide-text" : "<strong>Basics & Controls</strong>
+
+All locusts can be deployed by shift right-clicking with them in your hand
+All locusts need energy(kilojoules). To give a locust energy shift right click with any flammable item in your hand that burns higher than 200 degrees(Peat does not work for the player for some reason, but support locust can use peat).
+Locusts lose energy over time and when doing tasks.
+Locusts will go dormant when out of energy or when they have nothing to do. If they cannot find something they want in a container, put something in a container, or get stuck they will go onto a failure cooldown for that particular AI.(Default 1 minute, can be changed in the config)
+Pick up a worker locust by shift right-clicking with an empty hand.
+Ctrl+right click a locust to see their work area for 3 secs
+Shift+left click to make the locust forget everything(preferably with bare fists lol)
+Shift+ctrl+right click to attempt to swap items with a locust if they can
+Right-click with a hammer to repair a locust.
+
+<strong>Memory Gear</strong>
+
+An absolutely essential item for using the locusts, the memory gear is used to record a work area, chest, barrel, and item pickup for locusts. Controls:
+
+Ctrl+right click two corners of an area to select it for locust work(if you need to select an interactable block use Shift+Ctrl+right click)
+To select a single point ctrl+right click the same block twice.
+Shift+right click to select a barrel or chest to use
+Ctrl+right click while not selecting a block to activate item recording mode. Place an item on top of it in the inventory to record it for locust pickup. (Similar to how you put linen on clothes to repair them) or press ctrl+right click again to cancel.
+Shift+left click to highlight the work area in the memory gear.
+Place a memory gear in the crafting grid and take it out of the output slot to clear its memory.
+
+<strong>Types of Reprogrammed Locusts</strong>
+
+Harvester Locust
+
+This locust will harvest crops, berry bushes, beehives(without breaking the skep), and reeds/harvestable blocks on farmland. It needs a defined work area to harvest and requires a knife in order to harvest. The player can give it one or select a chest for it to get knives from.
+
+Planter Locust
+
+This locust will plant seeds, bushes, and saplings from a given chest or if the player give them it. They need a work area and preferably chest defined. With no item pickup memory, they will plant all plantable things that can be found in their selected chest. With an item pick up defined they will only pick up the item defined and plant it if they can plant it.
+
+Collector Locust
+
+This locust will pick up items in its area and put them in its defined chest. They need a work area and chest defined. Without an item pick up defined they will collect all items and place them in their selected chest. With an item pickup defined they will only pickup that item and place it in the chest.
+
+Transporter Locust
+
+This locust will transport items from one chest to another. For it to work, the chest defined must be the chest they are taking from. Then a single point for the work area with a chest(shift+ctrl+right click the same chest twice with memory gear) is where they will put the items. Without an item pick up defined they will collect all items from the chest defined and place them in their selected chest. With an item pick up defined they will only take that item from the defined chest to the selected one.
+
+Crafter Locust
+
+This locust will complete knapping and clay forming projects for you. To use you need to define a single point for the work area, and preferably a chest for it to get clay from. Start and select a recipe for clay forming/knapping in the point and they will begin to do it. For clay forming, they will need clay either provided by the player or from their defined chest. Give them an item pick up to restrict what clay they can use.
+
+Apiary Locust
+
+This locust will squeeze honeycomb from their chest putting honey into their defined barrel and dropping the wax on the ground. They need a chest and barrel defined. Their item pick up is locked on honeycomb and cannot be changed.
+
+Dairy Locust
+
+This locust will milk lactating animals in their work area and pour the milk into a defined barrel. They need a selected work area and barrel. Their item pick up is locked on milk and cannot be changed. Likewise, they cannot swap items with the player.
+
+Support Locust
+
+This locust will refuel and repair themselves and other locusts in its work area. They need a work area defined and preferably a chest to get fuel from. WARNING: They will INDISCRIMINATELY use any item for fuel. Make sure you have nothing flammable that you want in their work chest.
+
+Miner Locust
+
+This locust will mine out their work area starting from the top working its way to the bottom. They need a pickaxe in order to work, a work area, and preferably a chest to get pickaxes from. WARNING: They will INDISCRIMINATELY mine all blocks in their work area, including blocks that need special tools, or cannot be picked up for example a static translocator. Only select a few layers at a time to mine so that nothing valuable is destroyed. They forget their work area when finished and start over if not finished and unloaded/reloaded from disk.
+
+Builder Locust
+
+This locust will place blocks in a single layer where there is no other block at. They need a flat 1 block layer work area, a defined chest, and an item pick up that is a block, in order to work. They will only place blocks in the air, nowhere else. They forget their work area when finished and start over if not finished and unloaded/reloaded from disk.
+
+Guard Locust
+
+This unique locust will attack hostile creatures that comes in range. It only does 0.5 damage by default and needs to be equipped with a longblade, spear, or other melee weapon to increase its damage. By default it will follow the player around and act as a traveling companion if it has no selected point, or if a point is selected it will stay there and guard. It can also be given a chest to get longblades from. All damage it does and kills it gets are by the player instead.
+
+Sawblade Harvester Locust
+
+Does everything the harvester locust does except it needs an axe instead of a knife, and can chop trees.
+
+
+
+<strong>Translocator Chests & Barrels</strong>
+
+These special chests and barrels allow locust to instantaneously teleport items to and from working locusts. In order to be crafted, they need a Hivemind gear which can only be obtained from locust nests",
 }

@@ -29,12 +29,6 @@ namespace TemporalHack
                 return;
             }
 
-            if (!(byEntity is EntityPlayer) || player.WorldData.CurrentGameMode != EnumGameMode.Creative)
-            {
-                slot.TakeOut(1);
-                slot.MarkDirty();
-            }
-
 
             AssetLocation location = new AssetLocation(Code.Domain, CodeEndWithoutParts(1));
             EntityProperties type = byEntity.World.GetEntityType(location);
@@ -77,6 +71,12 @@ namespace TemporalHack
                 {
                     DamageSource dmg = new DamageSource() { Type = EnumDamageType.Crushing };
                     entity.ReceiveDamage(dmg, (float)slot.Itemstack.Attributes.GetDecimal("workHealth"));
+                }
+
+                if (!(byEntity is EntityPlayer) || player.WorldData.CurrentGameMode != EnumGameMode.Creative)
+                {
+                    slot.TakeOut(1);
+                    slot.MarkDirty();
                 }
                 handHandling = EnumHandHandling.PreventDefaultAction;
             }
