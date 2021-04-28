@@ -88,6 +88,17 @@ namespace TemporalHack
             double y = targetEntity.ServerPos.Y;
             double z = targetEntity.ServerPos.Z + targetOffset.Z;
 
+            if (entity.ServerPos.SquareDistanceTo(x, y, z) > 40*40)
+            {
+                float pitch = entity.SidedPos.Pitch;
+                float roll = entity.SidedPos.Roll;
+                entity.TeleportTo(targetEntity.SidedPos);
+                pathTraverser.Stop();
+                entity.SidedPos.Pitch = pitch;
+                entity.SidedPos.Roll = roll;
+                return false;
+            }
+
             pathTraverser.CurrentTarget.X = x;
             pathTraverser.CurrentTarget.Y = y;
             pathTraverser.CurrentTarget.Z = z;
