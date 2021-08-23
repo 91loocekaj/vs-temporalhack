@@ -1,6 +1,7 @@
 ﻿using System;
 using Vintagestory.API;
 using Vintagestory.API.Common;
+using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
@@ -66,7 +67,7 @@ namespace TemporalHack
 
             targetPoi = porregistry.GetNearestPoi((prog.workArea.End + prog.workArea.Start)/2, (float)(prog.workArea.Length + prog.workArea.Height + prog.workArea.Width), (poi) =>
             {
-                if (prog.workArea.ContainsOrTouches(poi.Position) && poi is BlockEntityFarmland && world.BlockAccessor.GetBlock(poi.Position.AsBlockPos).BlockId == 0) return true;
+                if (prog.workArea.ContainsOrTouches(poi.Position) && poi is BlockEntityFarmland && world.BlockAccessor.GetBlock(poi.Position.AsBlockPos).Replaceable > 9500) return true;
                 
 
                 return false;
